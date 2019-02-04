@@ -1,1 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Mee te brengen van de Colruyt</h1>
 
+    <ul id="list">
+
+
+
+    </ul>
+    <input type="text" id="product">
+    <button onclick="addProduct()">Add</button>
+    <button onclick="removeProduct()">Remove</button>
+
+
+<script>
+
+
+    var producten = ["Waspoeder","Kip","Alcoholstift","Witte Wijn"];
+
+
+    printList();
+
+    console.log(producten);
+
+
+function addProduct(){
+
+    var product = document.getElementById("product").value;
+    producten.push(product);
+
+    printList();
+
+}
+function removeProduct(){
+
+    var product = document.getElementById("product").value;
+    index = producten.indexOf(product);
+
+    producten.splice(index,1); 
+   
+    printList();
+
+}
+
+function printList(){
+
+    var lijstje = '<li>'+producten.join('</li><li>')+'</li>';
+    document.getElementById("list").innerHTML = lijstje;
+}
+
+</script>
+
+
+
+
+</body>
+</html>
